@@ -73,6 +73,13 @@ The server will start on the port specified in the
 
 .env file, which is 8888 by default.
 
+On another terminal
+
+type 'node index.js'
+
+This will start the server part of the app.
+
+
 🧪 Routes
 
 POST /generate
