@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@clerk/clerk-react": "^5.48.1",
+    "nodemon": "^3.1.10"
+  }
+}

@@ -1,0 +1,244 @@
+:root {
+  --primary-bg: #121212;
+  --secondary-bg: #181818;
+  --tertiary-bg: #282828;
+  --primary-text: #FFFFFF;
+  --secondary-text: #b3b3b3;
+  --accent-color: #1DB954;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+}
+
+.App {
+  text-align: center;
+  padding: 20px;
+  padding-bottom: 100px;
+}
+
+.App-header {
+  margin-bottom: 40px;
+}
+
+.App-header h1 {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+}
+
+.App-header p {
+  color: var(--secondary-text);
+  font-size: 1.1rem;
+}
+
+.mood-input-container {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.mood-input-container textarea {
+  width: 100%;
+  max-width: 500px;
+  min-height: 80px;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--tertiary-bg);
+  background-color: var(--secondary-bg);
+  color: var(--primary-text);
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.mood-input-container button {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 50px;
+  background-color: var(--accent-color);
+  color: var(--primary-text);
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.mood-input-container button:hover {
+  transform: scale(1.05);
+}
+
+.tracklist-container {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.track-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--secondary-bg);
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.track-item:hover {
+  background-color: var(--tertiary-bg);
+}
+
+.track-album-art {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.track-album-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  text-shadow: 0 0 5px black;
+}
+
+.track-item:hover .play-icon {
+  opacity: 1;
+}
+
+.track-info {
+  text-align: left;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.track-info h4,
+.track-info p {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-info h4 {
+  font-size: 1rem;
+  color: var(--primary-text);
+}
+
+.track-info p {
+  font-size: 0.9rem;
+  color: var(--secondary-text);
+}
+
+.spotify-link {
+  margin-left: 15px;
+  color: var(--secondary-text);
+  transition: color 0.2s;
+}
+
+.spotify-link svg {
+  width: 24px;
+  height: 24px;
+}
+
+.spotify-link:hover {
+  color: var(--accent-color);
+}
+
+.player-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--tertiary-bg);
+  padding: 10px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.player-container audio {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: block;
+}
+
+.loader {
+  border: 5px solid var(--tertiary-bg);
+  border-top: 5px solid var(--accent-color);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 30px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-message {
+  color: #ff4d4d;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  background-color: var(--secondary-bg);
+  border-radius: 4px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.history-item:hover {
+  background-color: var(--tertiary-bg);
+}
+
+.history-info p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--secondary-text);
+  font-weight: 500;
+}
+
+.share-button {
+  background-color: transparent;
+  color: var(--primary-text);
+  border: 1px solid var(--accent-color);
+  padding: 6px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: bold;
+  transition: background-color 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.share-button:hover {
+  background-color: var(--accent-color);
+  color: var(--primary-bg);
+}
